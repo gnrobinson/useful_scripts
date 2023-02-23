@@ -1,0 +1,21 @@
+# Rosalind tutorial
+# Python Village - Dictionaries
+
+file = open('/home/guy/Documents/Class/rosalind/rosalind_ini6.txt', 'r')
+data = file.read()
+def word_count(str):
+    counts = dict()
+    words = str.split()
+
+    for word in words:
+        if word in counts:
+            counts[word] += 1
+        else:
+            counts[word] = 1
+
+    return counts
+
+dict = word_count(data)
+
+for key, value in dict.items():
+	print(key, value)

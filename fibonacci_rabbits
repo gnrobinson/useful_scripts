@@ -1,0 +1,29 @@
+# Rosalind bioinformatics Stronghold
+# Rabbits and recurrence relations
+
+file = open('/home/guy/Downloads/file.txt', 'r')
+data = file.read()
+data = data.strip()
+
+# Guy's method
+def fibonacci(x):
+  parent = 1
+  child = 1
+  for i in x:
+      intermed = parent
+      parent = parent + child
+      print(child)
+      child = intermed
+
+x = range(1, 10, 1)
+
+# better method
+def fibonacci(x):
+  parent = 1
+  child = 1
+  for i in x:
+      child, parent = child, parent + child
+      return child
+
+for i in range(10):
+    print(fibonacci(i))
